@@ -31,6 +31,7 @@
   <exec_depend>python3-numpy</exec_depend>
   <exec_depend>python3-yaml</exec_depend>
   <depend>pluginlib</depend>
+  <depend>mujoco</depend>
   <depend>mujoco_ros_msgs</depend>
   <depend>rosgraph_msgs</depend>
   <depend>tf2</depend>
