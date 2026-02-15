@@ -17,6 +17,7 @@
   <depend>dynamic_reconfigure</depend>
   <depend>actionlib</depend>
   <depend>pluginlib</depend>
+  <depend>mujoco</depend>
   <depend>mujoco_ros_msgs</depend>
   <depend>tf2</depend>
   <depend>tf2_ros</depend>
