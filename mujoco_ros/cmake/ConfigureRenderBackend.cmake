@@ -67,16 +67,17 @@ endif()
 
 message(STATUS "configured RENDERING_BACKEND: ${RENDERING_BACKEND}")
 
-add_custom_command(
-  OUTPUT ${CATKIN_DEVEL_PREFIX}/include/${PROJECT_NAME}/render_backend.h always_rebuild
-  COMMAND ${CMAKE_COMMAND}
-  -DRENDER_BACKEND=${RENDERING_BACKEND}
-  -DHEADER_FILE_PATH=${CATKIN_DEVEL_PREFIX}/include/${PROJECT_NAME}
-  -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/GenerateBackendHeader.cmake
-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+set(RENDER_BACKEND ${RENDERING_BACKEND})
+
+set(RENDER_BACKEND_HEADER "${CATKIN_DEVEL_PREFIX}/include/${PROJECT_NAME}/render_backend.h")
+
+configure_file(
+ "${CMAKE_CURRENT_SOURCE_DIR}/cmake/render_backend.h.in"
+ "${RENDER_BACKEND_HEADER}"
 )
+
 add_custom_target(render_backend_h
- DEPENDS always_rebuild
+ DEPENDS "${RENDER_BACKEND_HEADER}"
 )
 
 list(APPEND ${PROJECT_NAME}_INCLUDE_DIRS
@@ -85,6 +86,6 @@ list(APPEND ${PROJECT_NAME}_INCLUDE_DIRS
 
 # Install header file
 # catkin_lint: ignore_once external_file
-install(FILES ${CATKIN_DEVEL_PREFIX}/include/${PROJECT_NAME}/render_backend.h
+install(FILES ${RENDER_BACKEND_HEADER}
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
