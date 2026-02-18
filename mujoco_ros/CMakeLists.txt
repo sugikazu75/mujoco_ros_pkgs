@@ -50,7 +50,7 @@ if (ROS_VERSION EQUAL "1")
   )
 
   # Find MuJoCo
-  find_package(mujoco 3.3.5 REQUIRED)
+  find_package(mujoco REQUIRED)
 else()
   find_package(ament_cmake REQUIRED)
   find_package(ament_cmake_python REQUIRED)
