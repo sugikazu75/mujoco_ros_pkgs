@@ -46,6 +46,7 @@ if(ROS_VERSION EQUAL 1)
   )
 
   add_library(${PROJECT_NAME}
+    src/force_visualizer_plugin.cpp
     src/mujoco_sensor_handler_plugin.cpp
   )
 

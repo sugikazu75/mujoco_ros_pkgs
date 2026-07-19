@@ -7,4 +7,12 @@
       Mujoco plugin to publish the default mujoco sensors to ROS.
     </description>
   </class>
+  <class
+    name="mujoco_ros_sensors/ForceVisualizerPlugin"
+    type="mujoco_ros::sensors::ForceVisualizerPlugin"
+    base_class_type="mujoco_ros::MujocoPlugin">
+    <description>
+      Mujoco plugin to render force sensor readings as a single arrow per sensor.
+    </description>
+  </class>
 </library>
