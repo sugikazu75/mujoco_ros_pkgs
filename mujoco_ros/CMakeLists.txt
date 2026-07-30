@@ -21,7 +21,7 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
-option(BUILD_PYTHON_BINDINGS "Build the pybind11 Python bindings" ON)
+option(BUILD_PYTHON_BINDINGS "Build the pybind11 Python bindings" OFF)
 
 set(OpenGL_GL_PREFERENCE GLVND)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)

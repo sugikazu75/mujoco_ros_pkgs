@@ -16,7 +16,7 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
-option(BUILD_PYTHON_BINDINGS "Build the pybind11 Python bindings" ON)
+option(BUILD_PYTHON_BINDINGS "Build the pybind11 Python bindings" OFF)
 
 if(ROS_VERSION EQUAL 1)
   find_package(catkin REQUIRED COMPONENTS

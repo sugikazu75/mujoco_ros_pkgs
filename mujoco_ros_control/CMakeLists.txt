@@ -18,7 +18,7 @@ endif()
 
 set(CMAKE_CXX_FLAGS_SANITIZE "-fsanitize=address -g -O1 -fno-inline -fno-omit-frame-pointer -fno-optimize-sibling-calls")
 
-option(BUILD_PYTHON_BINDINGS "Build the pybind11 Python bindings" ON)
+option(BUILD_PYTHON_BINDINGS "Build the pybind11 Python bindings" OFF)
 
 if(ROS_VERSION EQUAL 1)
   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
